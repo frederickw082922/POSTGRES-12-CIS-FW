@@ -1,5 +1,5 @@
 Vagrant.configure("2") do |config|
-    config.vm.box = "generic/rocky9"
+    config.vm.box = "rockylinux/9"
     config.ssh.username = 'vagrant'
     config.ssh.password = 'vagrant'
     config.vm.define 'rocky9'
