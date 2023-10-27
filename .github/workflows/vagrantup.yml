@@ -18,10 +18,10 @@ on: # yamllint disable-line rule:truthy
 
 jobs:
   vagrant-up:
-    runs-on: macos-13
+    runs-on: macos-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Set up Python 3.
         uses: actions/setup-python@v4
@@ -47,7 +47,7 @@ jobs:
         run: vagrant up
 
       - name: Cache Vagrant boxes
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ~/.vagrant.d/boxes
           key: ${{ runner.os }}-vagrant-${{ hashFiles('Vagrantfile') }}
